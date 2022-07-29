@@ -2,7 +2,9 @@ const express = require('express')
 const dotenv = require('dotenv')
 const cors = require('cors')
 
-const { studentBuilderRouter } = require('./src/routes/studentProjectBuilder.routes')
+const { studentBuilderRouter } = require('./src/routes/studentBuilder.routes')
+
+const app = express()
 
 dotenv.config()
 
@@ -11,4 +13,4 @@ app.use(express.json())
 
 app.use('/student-project-builder', studentBuilderRouter)
 
-const app = express(process.env.PORT)
+app.listen(process.env.PORT)
